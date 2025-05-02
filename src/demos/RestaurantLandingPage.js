@@ -4,10 +4,10 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import Hero from "components/hero/TwoColumnWithVideo.js";
 import Features from "components/features/Features.js";
-import MainFeature from "components/features/TwoColWithButton.js";
-import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
+// import MainFeature from "components/features/TwoColWithButton.js";
+// import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
 import MenuCards from "components/cards/MenuCardGrid.js";
-import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
+// import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
 import Footer from "components/footers/Footer";
 
 import chefIconImageSrc from "images/chef-icon.svg";
@@ -16,10 +16,10 @@ import shopIconImageSrc from "images/shop-icon.svg";
 import ContactUs from "components/forms/Contact";
 
 export default () => {
-	const Subheading = tw.span`tracking-wider text-sm font-medium`;
+	// const Subheading = tw.span`tracking-wider text-sm font-medium`;
 	const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
 	// const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
-	const Description = tw.span`inline-block mt-8`;
+	// const Description = tw.span`inline-block mt-8`;
 	const imageCss = tw`rounded-4xl`;
 	return (
 		<AnimationRevealPage>

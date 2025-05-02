@@ -5,8 +5,8 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import { ReactComponent as StarIcon } from "images/star-icon.svg";
+// import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
+// import { ReactComponent as StarIcon } from "images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
 
@@ -260,56 +260,56 @@ const getMainCards = () => {
 	return cards;
 };
 
-const getFastFoodCards = () => {
-	const cards = [
-		{
-			imageSrc:
-				"https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			title: "Samosa",
-			content:
-				"Crispy golden samosas served with a tangy, flavorful chaat twist.",
-			price: "$5.99",
-			rating: "5.0",
-			reviews: "87",
-			url: "#",
-		},
-		{
-			imageSrc: "https://static.toiimg.com/photo/75831269.cms",
-			title: "Panipuri",
-			content:
-				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
-			price: "$2.99",
-			rating: "4.8",
-			reviews: "32",
-			url: "#",
-		},
-		{
-			imageSrc:
-				"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-1_mumbai-vada-pav-1024x538.png",
-			title: "Vada Pav",
-			content:
-				"Mumbai’s iconic spicy potato fritter sandwich, served with chutneys.",
-			price: "$7.99",
-			rating: "4.9",
-			reviews: "89",
-			url: "#",
-		},
-		{
-			imageSrc:
-				"https://indianvegrecipe.com/wp-content/uploads/2019/08/kutchi-dabeli-recipe.jpg",
-			title: "Dabeli",
-			content:
-				"A Gujarati street-food delicacy filled with spicy mashed potatoes, pomegranate, and peanuts.",
-			price: "$8.99",
-			rating: "4.6",
-			reviews: "12",
-			url: "#",
-		},
-	];
+// const getFastFoodCards = () => {
+// 	const cards = [
+// 		{
+// 			imageSrc:
+// 				"https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+// 			title: "Samosa",
+// 			content:
+// 				"Crispy golden samosas served with a tangy, flavorful chaat twist.",
+// 			price: "$5.99",
+// 			rating: "5.0",
+// 			reviews: "87",
+// 			url: "#",
+// 		},
+// 		{
+// 			imageSrc: "https://static.toiimg.com/photo/75831269.cms",
+// 			title: "Panipuri",
+// 			content:
+// 				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
+// 			price: "$2.99",
+// 			rating: "4.8",
+// 			reviews: "32",
+// 			url: "#",
+// 		},
+// 		{
+// 			imageSrc:
+// 				"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-1_mumbai-vada-pav-1024x538.png",
+// 			title: "Vada Pav",
+// 			content:
+// 				"Mumbai’s iconic spicy potato fritter sandwich, served with chutneys.",
+// 			price: "$7.99",
+// 			rating: "4.9",
+// 			reviews: "89",
+// 			url: "#",
+// 		},
+// 		{
+// 			imageSrc:
+// 				"https://indianvegrecipe.com/wp-content/uploads/2019/08/kutchi-dabeli-recipe.jpg",
+// 			title: "Dabeli",
+// 			content:
+// 				"A Gujarati street-food delicacy filled with spicy mashed potatoes, pomegranate, and peanuts.",
+// 			price: "$8.99",
+// 			rating: "4.6",
+// 			reviews: "12",
+// 			url: "#",
+// 		},
+// 	];
 
-	// Shuffle array
-	return cards;
-};
+// 	// Shuffle array
+// 	return cards;
+// };
 
 const getDessertsCards = () => {
 	const cards = [
