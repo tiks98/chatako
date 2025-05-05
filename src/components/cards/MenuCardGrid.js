@@ -12,7 +12,7 @@ import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
-const TabsControl = tw.div`flex flex-wrap bg-gray-200 px-2 py-2 rounded leading-none mt-12 xl:mt-0`;
+const TabsControl = tw.div`flex bg-gray-200 px-2 py-2 rounded leading-none mt-12 xl:mt-0`;
 
 const TabControl = styled.div`
   ${tw`cursor-pointer px-6 py-3 mt-2 sm:mt-0 sm:mr-2 last:mr-0 text-gray-600 font-medium rounded-sm transition duration-300 text-sm sm:text-base w-1/2 sm:w-auto text-center`}
@@ -29,13 +29,13 @@ const TabContent = tw(
 const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
 const Card = tw(
 	motion.a
-)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
+)`bg-gray-200 rounded-xl block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
 const CardImageContainer = styled.div`
 	${(props) =>
 		css`
 			background-image: url("${props.imageSrc}");
 		`}
-	${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
+	${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-xl rounded-b`}
 `;
 // const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
 // const CardRating = styled.div`
@@ -67,51 +67,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 export default ({
 	heading = "Checkout the Menu",
 	tabs = {
-		Snacks: [
-			{
-				imageSrc:
-					"https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-				title: "Samosa",
-				content:
-					"Crispy golden samosas served with a tangy, flavorful chaat twist.",
-				price: "$5.99",
-				rating: "5.0",
-				reviews: "87",
-				url: "#",
-			},
-			{
-				imageSrc: "https://static.toiimg.com/photo/75831269.cms",
-				title: "Panipuri",
-				content:
-					"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
-				price: "$2.99",
-				rating: "4.8",
-				reviews: "32",
-				url: "#",
-			},
-			{
-				imageSrc:
-					"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-1_mumbai-vada-pav-1024x538.png",
-				title: "Vada Pav",
-				content:
-					"Mumbai’s iconic spicy potato fritter sandwich, served with chutneys.",
-				price: "$7.99",
-				rating: "4.9",
-				reviews: "89",
-				url: "#",
-			},
-			{
-				imageSrc:
-					"https://indianvegrecipe.com/wp-content/uploads/2019/08/kutchi-dabeli-recipe.jpg",
-				title: "Dabeli",
-				content:
-					"A Gujarati street-food delicacy filled with spicy mashed potatoes, pomegranate, and peanuts.",
-				price: "$8.99",
-				rating: "4.6",
-				reviews: "12",
-				url: "#",
-			},
-		],
+		Snacks: getSnacksCard(),
 		Main: getMainCards(),
 		// Soup: getFastFoodCards(),
 		Desserts: getDessertsCards(),
@@ -208,8 +164,7 @@ export default ({
 	);
 };
 
-/* This function is only there for demo purposes. It populates placeholder cards */
-const getMainCards = () => {
+const getSnacksCard = () => {
 	const cards = [
 		{
 			imageSrc:
@@ -223,7 +178,8 @@ const getMainCards = () => {
 			url: "#",
 		},
 		{
-			imageSrc: "https://static.toiimg.com/photo/75831269.cms",
+			imageSrc:
+				"https://content.jdmagicbox.com/comp/ahmedabad/v8/079pxx79.xx79.140705122003.k9v8/catalogue/mri-panipuri-new-vadaj-ahmedabad-street-food-49b1126.jpg",
 			title: "Panipuri",
 			content:
 				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
@@ -252,6 +208,128 @@ const getMainCards = () => {
 			price: "$8.99",
 			rating: "4.6",
 			reviews: "12",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://www.spiceupthecurry.com/wp-content/uploads/2017/09/fafda-recipe-9-500x500.jpg",
+			title: "Fafda",
+			content:
+				"Traditional Gujarati snack, crispy and served with spicy chutneys.",
+			price: "$8.99",
+			rating: "4.6",
+			reviews: "12",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://www.archanaskitchen.com/images/archanaskitchen/10-Brands/DelMonte-KidsRecipes/Healthy_Paneer_Frankie_Rolls_Recipe_-_Kids_Recipes_Made_With_Del_Monte_-1.jpg",
+			title: "Paneer Frankie",
+			content:
+				"Spicy paneer rolls wrapped in soft rotis, perfect for on-the-go cravings.",
+			price: "$8.99",
+			rating: "4.5",
+			reviews: "14",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://www.cookwithmanali.com/wp-content/uploads/2014/11/Hakka-Noodles-1.jpg",
+			title: "Veg Hakka Noodles",
+			content: "Indo-Chinese fusion with stir-fried veggies and bold sauces.",
+			price: "$9.99",
+			rating: "4.6",
+			reviews: "13",
+			url: "#",
+		},
+	];
+
+	return cards;
+};
+
+/* This function is only there for demo purposes. It populates placeholder cards */
+const getMainCards = () => {
+	const cards = [
+		{
+			imageSrc: "https://static.toiimg.com/photo/52446409.cms",
+			title: "Paneer Sabji",
+			content: "Fresh cottage cheese cooked in a traditional spiced gravy.",
+			price: "$10.99",
+			rating: "4.7",
+			reviews: "18",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://cookingfromheart.com/wp-content/uploads/2016/10/Paneer-Butter-Masala-3.jpg",
+			title: "Paneer Butter Masala",
+			content: "Creamy, rich, and mildly spiced, this is a crowd-pleaser.",
+			price: "$11.99",
+			rating: "4.8",
+			reviews: "24",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2015/10/Jain-hobby1-copy.jpg?fm=webp&w=750&h=500&dpr=1",
+			title: "Paneer Tikka (Smoky / Non-smoky)",
+			content:
+				"Char-grilled paneer infused with aromatic spices, available in smoky and non-smoky options.",
+			price: "$12.49",
+			rating: "4.6",
+			reviews: "15",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://img-global.cpcdn.com/recipes/0c365071dcbaf79b/1200x630cq70/photo.jpg",
+			title: "Bhungala Bateta",
+			content:
+				"A Kathiyawadi classic, featuring crispy fried potatoes and spicy sev.",
+			price: "$9.99",
+			rating: "4.5",
+			reviews: "10",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://thewhiskaddict.com/wp-content/uploads/2021/02/IMG_7290-1-1024x996.jpg",
+			title: "Ringan Bataka Nu Shaak",
+			content: "A beloved eggplant and potato curry seasoned to perfection.",
+			price: "$9.49",
+			rating: "4.4",
+			reviews: "8",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://cdn.zeptonow.com/production///tr:w-600,ar-100-100,pr-true,f-auto,q-80/web/recipes/chola-bhatura.png",
+			title: "Chhole",
+			content: "Punjabi-style chickpeas cooked in a bold and hearty masala.",
+			price: "$9.99",
+			rating: "4.7",
+			reviews: "17",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://www.indianhealthyrecipes.com/wp-content/uploads/2021/06/sabudana-khichdi-recipe.jpg",
+			title: "Rajwadi Sabudana Khichdi",
+			content:
+				"A royal take on a classic fasting dish, full of flavor and tradition.",
+			price: "$10.49",
+			rating: "4.6",
+			reviews: "11",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-2_Jain-pav-bhaji-1024x538.png",
+			title: "Pav Bhaji",
+			content: "Butter-laden mashed veggie curry served with toasted buns.",
+			price: "$9.49",
+			rating: "4.8",
+			reviews: "26",
 			url: "#",
 		},
 	];
@@ -315,45 +393,13 @@ const getDessertsCards = () => {
 	const cards = [
 		{
 			imageSrc:
-				"https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			title: "Samosa",
+				"https://www.cookingwithsiddhi.com/wp-content/uploads/2018/12/sukhadi-gur-papdi.jpg",
+			title: "Sukhadi",
 			content:
-				"Crispy golden samosas served with a tangy, flavorful chaat twist.",
+				"A wholesome Gujarati sweet made with jaggery, ghee, and wheat flour.",
 			price: "$5.99",
 			rating: "5.0",
 			reviews: "87",
-			url: "#",
-		},
-		{
-			imageSrc: "https://static.toiimg.com/photo/75831269.cms",
-			title: "Panipuri",
-			content:
-				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
-			price: "$2.99",
-			rating: "4.8",
-			reviews: "32",
-			url: "#",
-		},
-		{
-			imageSrc:
-				"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-1_mumbai-vada-pav-1024x538.png",
-			title: "Vada Pav",
-			content:
-				"Mumbai’s iconic spicy potato fritter sandwich, served with chutneys.",
-			price: "$7.99",
-			rating: "4.9",
-			reviews: "89",
-			url: "#",
-		},
-		{
-			imageSrc:
-				"https://indianvegrecipe.com/wp-content/uploads/2019/08/kutchi-dabeli-recipe.jpg",
-			title: "Dabeli",
-			content:
-				"A Gujarati street-food delicacy filled with spicy mashed potatoes, pomegranate, and peanuts.",
-			price: "$8.99",
-			rating: "4.6",
-			reviews: "12",
 			url: "#",
 		},
 	];

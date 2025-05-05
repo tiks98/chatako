@@ -43,8 +43,8 @@ export default () => {
 					</LogoContainer>
 					<LinksContainer>
 						<Link href="#">Home</Link>
-						<Link href="#">Menu</Link>
-						<Link href="#">Contact Us</Link>
+						<Link href="#MenuCards">Menu</Link>
+						<Link href="#Contactus">Contact Us</Link>
 					</LinksContainer>
 					<SocialLinksContainer>
 						<SocialLink href="https://facebook.com">
