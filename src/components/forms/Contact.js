@@ -47,7 +47,7 @@ export default ({
 			<wbr /> with us.
 		</>
 	),
-	description = "Contact No: (888) 888-888",
+	description = "Contact No: +1 (732) 306-1897",
 	submitButtonText = "Contact Me",
 	formAction = "#",
 	formMethod = "get",
@@ -66,7 +66,7 @@ export default ({
 						{/* {subheading && <Subheading>{subheading}</Subheading>} */}
 						<Heading>{heading}</Heading>
 						<Description>{description}</Description>
-						<Description>Email: john.doe@example.com</Description>
+						{/* <Description>Email: john.doe@example.com</Description> */}
 						{/* <Form action={formAction} method={formMethod}>
               <Input type="email" name="email" placeholder="Your Email Address" />
               <SubmitButton type="submit">{submitButtonText}</SubmitButton>

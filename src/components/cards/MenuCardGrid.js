@@ -168,24 +168,13 @@ const getSnacksCard = () => {
 	const cards = [
 		{
 			imageSrc:
-				"https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-			title: "Samosa",
+				"https://www.spiceupthecurry.com/wp-content/uploads/2017/09/fafda-recipe-9-500x500.jpg",
+			title: "Bhavnagari Fafda",
 			content:
-				"Crispy golden samosas served with a tangy, flavorful chaat twist.",
-			price: "$5.99",
-			rating: "5.0",
-			reviews: "87",
-			url: "#",
-		},
-		{
-			imageSrc:
-				"https://content.jdmagicbox.com/comp/ahmedabad/v8/079pxx79.xx79.140705122003.k9v8/catalogue/mri-panipuri-new-vadaj-ahmedabad-street-food-49b1126.jpg",
-			title: "Panipuri",
-			content:
-				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
-			price: "$2.99",
-			rating: "4.8",
-			reviews: "32",
+				"Traditional Gujarati snack, crispy and served with spicy chutneys.",
+			price: "$8.99",
+			rating: "4.6",
+			reviews: "12",
 			url: "#",
 		},
 		{
@@ -212,24 +201,24 @@ const getSnacksCard = () => {
 		},
 		{
 			imageSrc:
-				"https://www.spiceupthecurry.com/wp-content/uploads/2017/09/fafda-recipe-9-500x500.jpg",
-			title: "Fafda",
+				"https://content.jdmagicbox.com/comp/ahmedabad/v8/079pxx79.xx79.140705122003.k9v8/catalogue/mri-panipuri-new-vadaj-ahmedabad-street-food-49b1126.jpg",
+			title: "Panipuri",
 			content:
-				"Traditional Gujarati snack, crispy and served with spicy chutneys.",
-			price: "$8.99",
-			rating: "4.6",
-			reviews: "12",
+				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
+			price: "$2.99",
+			rating: "4.8",
+			reviews: "32",
 			url: "#",
 		},
 		{
 			imageSrc:
-				"https://www.archanaskitchen.com/images/archanaskitchen/10-Brands/DelMonte-KidsRecipes/Healthy_Paneer_Frankie_Rolls_Recipe_-_Kids_Recipes_Made_With_Del_Monte_-1.jpg",
-			title: "Paneer Frankie",
+				"https://www.chefkunalkapur.com/wp-content/uploads/2023/11/DSC08208-1300x731.jpg?v=1699513010",
+			title: "Khasta Kachori",
 			content:
-				"Spicy paneer rolls wrapped in soft rotis, perfect for on-the-go cravings.",
-			price: "$8.99",
-			rating: "4.5",
-			reviews: "14",
+				"Crispy golden kachori served with a tangy, flavorful chaat twist.",
+			price: "$5.99",
+			rating: "5.0",
+			reviews: "87",
 			url: "#",
 		},
 		{
@@ -291,16 +280,16 @@ const getMainCards = () => {
 			reviews: "10",
 			url: "#",
 		},
-		{
-			imageSrc:
-				"https://thewhiskaddict.com/wp-content/uploads/2021/02/IMG_7290-1-1024x996.jpg",
-			title: "Ringan Bataka Nu Shaak",
-			content: "A beloved eggplant and potato curry seasoned to perfection.",
-			price: "$9.49",
-			rating: "4.4",
-			reviews: "8",
-			url: "#",
-		},
+		// {
+		// 	imageSrc:
+		// 		"https://thewhiskaddict.com/wp-content/uploads/2021/02/IMG_7290-1-1024x996.jpg",
+		// 	title: "Ringan Bataka Nu Shaak",
+		// 	content: "A beloved eggplant and potato curry seasoned to perfection.",
+		// 	price: "$9.49",
+		// 	rating: "4.4",
+		// 	reviews: "8",
+		// 	url: "#",
+		// },
 		{
 			imageSrc:
 				"https://cdn.zeptonow.com/production///tr:w-600,ar-100-100,pr-true,f-auto,q-80/web/recipes/chola-bhatura.png",
@@ -397,6 +386,28 @@ const getDessertsCards = () => {
 			title: "Sukhadi",
 			content:
 				"A wholesome Gujarati sweet made with jaggery, ghee, and wheat flour.",
+			price: "$5.99",
+			rating: "5.0",
+			reviews: "87",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://sinfullyspicy.com/wp-content/uploads/2015/08/1200-by-1200-images.jpg",
+			title: "Kaju Draksh Ice-cream",
+			content:
+				"A creamy delight ice-cream loaded with rich cashews and juicy raisins.",
+			price: "$5.99",
+			rating: "5.0",
+			reviews: "87",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://static.toiimg.com/thumb/75760325.cms?imgsize=1225826&width=800&height=800",
+			title: "Kesar Pista Ice-cream",
+			content:
+				"An infusion of fragrant saffron and crunchy pistachios into creamy goodness of an ice-cream.",
 			price: "$5.99",
 			rating: "5.0",
 			reviews: "87",
