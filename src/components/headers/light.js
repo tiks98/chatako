@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import { Link } from "react-router-dom"; // Import Link
+import { useCart } from "../../context/CartContext.js"; // Import useCart
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
@@ -21,6 +23,13 @@ export const NavLinks = tw.div`inline-block`;
  * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
  */
 export const NavLink = tw.a`
+  text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
+  font-semibold tracking-wide transition duration-300
+  pb-1 border-b-2 border-transparent hover:border-primary-500 hocus:text-primary-500
+`;
+
+// Create a new NavLink for react-router-dom Link
+export const RouterNavLink = tw(Link)`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300
   pb-1 border-b-2 border-transparent hover:border-primary-500 hocus:text-primary-500
@@ -76,15 +85,19 @@ export default ({
 	 * changing the defaultLinks variable below below.
 	 * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are responsible for styling the links or use the helper styled components that are defined here (NavLink)
 	 */
-	const defaultLinks = [
-		<NavLinks key={1}>
-			<NavLink href="#MenuCards">Menu</NavLink>
-			{/* <NavLink href="/#">Blog</NavLink>
-			<NavLink href="/#">Pricing</NavLink> */}
-			<NavLink href="#ContactUs">Contact Us</NavLink>
-			{/* <NavLink
-				href="/#"
-				tw="lg:ml-12!">
+	// const { getCartItemsCount } = useCart(); // No longer needed here directly for defaultLinks
+	// const itemsCount = getCartItemsCount(); // No longer needed here
+
+	// const defaultLinks = [ // This will be replaced by finalLinks logic
+	// 	<NavLinks key={1}>
+	// 		<NavLink href="/#MenuCards">Menu</NavLink>
+	// 		{/* <NavLink href="/#">Blog</NavLink>
+	// 		<NavLink href="/#">Pricing</NavLink> */}
+	// 		<NavLink href="/#ContactUs">Contact Us</NavLink>
+	// 		<RouterNavLink to="/cart">Cart ({itemsCount})</RouterNavLink> {/* Add Cart link */}
+	// 		{/* <NavLink
+	// 			href="/#"
+	// 			tw="lg:ml-12!">
 				Login
 			</NavLink>
 			<PrimaryLink
@@ -110,13 +123,26 @@ export default ({
 	);
 
 	logoLink = logoLink || defaultLogoLink;
-	links = links || defaultLinks;
+
+	// Define the links that will be rendered.
+	// If a links prop is provided, it will be used. Otherwise, defaultLinks will be used.
+	// The cart item count is fetched reactively using useCart().getCartItemsCount()
+	const navLinksToRender = links || [
+		<NavLinks key={1}>
+			<NavLink href="/#MenuCards">Menu</NavLink>
+			<NavLink href="/#ContactUs">Contact Us</NavLink>
+			<RouterNavLink to="/cart">
+				Cart ({useCart().getCartItemsCount()}) {/* Ensure count updates dynamically */}
+			</RouterNavLink>
+		</NavLinks>,
+	];
+
 
 	return (
 		<Header className={className || "header-light"}>
 			<DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}>
 				{logoLink}
-				{links}
+				{navLinksToRender} {/* Use the computed links */}
 			</DesktopNavLinks>
 
 			<MobileNavLinksContainer
@@ -126,7 +152,13 @@ export default ({
 					initial={{ x: "150%", display: "none" }}
 					animate={animation}
 					css={collapseBreakpointCss.mobileNavLinks}>
-					{links}
+					{/* Render navLinksToRender for mobile as well */}
+					{/* Ensure to clone if it's a direct component array as before, or map if it's an array of components */}
+					{navLinksToRender.map((navLinksComponent, i) =>
+						React.isValidElement(navLinksComponent) ?
+						React.cloneElement(navLinksComponent, { key: `mobile-nav-${i}` }) :
+						navLinksComponent /* Should not happen if structure is consistent */
+					)}
 				</MobileNavLinks>
 				<NavToggle
 					onClick={toggleNavbar}

@@ -7,6 +7,7 @@ import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
 // import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 // import { ReactComponent as StarIcon } from "images/star-icon.svg";
+import { useCart } from "context/CartContext.js"; // Import useCart
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
 
@@ -57,6 +58,11 @@ const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
 const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
 // const CardPrice = tw.p`mt-4 text-xl font-bold`;
 
+// Define a simple Add to Cart Button
+const AddToCartButton = styled.button`
+  ${tw`mt-4 w-full py-2 bg-primary-500 text-gray-100 rounded-md font-semibold hover:bg-primary-700 transition duration-300`}
+`;
+
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
 	${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
 `;
@@ -80,6 +86,7 @@ export default ({
 	 */
 	const tabsKeys = Object.keys(tabs);
 	const [activeTab, setActiveTab] = useState(tabsKeys[0]);
+	const { addItemToCart } = useCart(); // Get addItemToCart from useCart
 
 	return (
 		<Container>
@@ -151,6 +158,18 @@ export default ({
 										<CardTitle>{card.title}</CardTitle>
 										<CardContent>{card.content}</CardContent>
 										{/* <CardPrice>{card.price}</CardPrice> */}
+										<AddToCartButton
+											onClick={() =>
+												addItemToCart({
+													id: card.title, // Using title as id for now
+													name: card.title,
+													price: parseFloat(card.price.replace("$", "")),
+													imageSrc: card.imageSrc,
+												})
+											}
+										>
+											Add to Cart
+										</AddToCartButton>
 									</CardText>
 								</Card>
 							</CardContainer>

@@ -89,6 +89,8 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import RestaurantLandingPage from "demos/RestaurantLandingPage.js";
 // import ServiceLandingPage from "demos/ServiceLandingPage.js";
 // import HostingCloudLandingPage from "demos/HostingCloudLandingPage.js";
+import { CartProvider } from "./context/CartContext.js"; // Import CartProvider
+import CartPage from "./pages/CartPage.js"; // Import CartPage
 
 /* Inner Pages */
 // import LoginPage from "pages/Login.js";
@@ -114,15 +116,18 @@ export default function App() {
 		<>
 			<GlobalStyles />
 			<Router>
-				<Routes>
-					{/* <Route path="/components/:type/:subtype/:name" element={<ComponentRenderer />} />
-          <Route path="/components/:type/:name" element={<ComponentRenderer />} />
-          <Route path="/thank-you" element={<ThankYouPage />} /> */}
-					<Route
-						path="/chatako"
-						element={<RestaurantLandingPage />}
-					/>
-				</Routes>
+				<CartProvider> {/* Wrap Routes with CartProvider */}
+					<Routes>
+						{/* <Route path="/components/:type/:subtype/:name" element={<ComponentRenderer />} />
+	          <Route path="/components/:type/:name" element={<ComponentRenderer />} />
+	          <Route path="/thank-you" element={<ThankYouPage />} /> */}
+						<Route
+							path="/chatako"
+							element={<RestaurantLandingPage />}
+						/>
+						<Route path="/cart" element={<CartPage />} /> {/* Add CartPage route */}
+					</Routes>
+				</CartProvider>
 			</Router>
 		</>
 	);
