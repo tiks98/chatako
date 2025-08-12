@@ -60,7 +60,9 @@ export default ({
 						<Actions>
 							<PrimaryButton
 								as="a"
-								href={primaryButtonUrl}>
+								href={primaryButtonUrl}
+								target="_blank"
+								rel="noopener noreferrer">
 								{primaryButtonText}
 							</PrimaryButton>
 						</Actions>

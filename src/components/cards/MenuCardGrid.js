@@ -29,7 +29,7 @@ const TabContent = tw(
 const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
 const Card = tw(
 	motion.a
-)`bg-gray-200 rounded-xl block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
+)`bg-gray-200 rounded-xl block max-w-xs mx-auto sm:max-w-none sm:mx-0 transition-transform duration-300 hover:cursor-pointer transform hover:scale-105`;
 const CardImageContainer = styled.div`
 	${(props) =>
 		css`

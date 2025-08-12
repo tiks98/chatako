@@ -33,7 +33,8 @@ export default () => {
 				imageSrc="https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?q=80&w=2023&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 				imageCss={imageCss}
 				imageDecoratorBlob={true}
-				primaryButtonText="Learn More"
+				primaryButtonText="See Full Menu"
+				primaryButtonUrl="/Menu_wo_price.png"
 			/>
 			{/* <MainFeature
 				subheading={<Subheading>Established Since 2014</Subheading>}

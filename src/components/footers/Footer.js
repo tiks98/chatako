@@ -17,7 +17,7 @@ const LogoImg = tw.img`w-32`;
 // const LogoText = tw.h5`ml-2 text-2xl font-black tracking-wider text-gray-900`;
 
 const LinksContainer = tw.div`mt-8 font-medium flex flex-wrap justify-center items-center flex-col sm:flex-row`;
-const Link = tw.a`border-b-2 border-transparent hocus:text-gray-700 hocus:border-gray-400 pb-1 transition duration-300 mt-2 mx-4`;
+const Link = tw.a`border-b-2 border-transparent hocus:text-primary-700 hocus:border-primary-400 pb-1 transition duration-300 mt-2 mx-4`;
 
 const SocialLinksContainer = tw.div`mt-10`;
 const SocialLink = styled.a`
