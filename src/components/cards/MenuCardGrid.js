@@ -26,16 +26,16 @@ const TabControl = styled.div`
 const TabContent = tw(
 	motion.div
 )`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
-const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
+const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/2 lg:w-1/3 sm:pr-10 md:pr-6 lg:pr-12`;
 const Card = tw(
 	motion.a
-)`bg-gray-200 rounded-xl block max-w-xs mx-auto sm:max-w-none sm:mx-0 transition-transform duration-300 hover:cursor-pointer transform hover:scale-105`;
+)`bg-gray-200 rounded-xl block max-w-xs mx-auto sm:max-w-none sm:mx-0 transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 shadow-[0_3px_10px_rgb(0,0,0,0.2)]`;
 const CardImageContainer = styled.div`
 	${(props) =>
 		css`
 			background-image: url("${props.imageSrc}");
 		`}
-	${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-xl rounded-b`}
+	${tw`h-64 xl:h-72 bg-center bg-cover relative rounded-xl rounded-b`}
 `;
 // const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
 // const CardRating = styled.div`
@@ -55,7 +55,7 @@ const CardImageContainer = styled.div`
 const CardText = tw.div`p-4 text-gray-900`;
 const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
 const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
-// const CardPrice = tw.p`mt-4 text-xl font-bold`;
+const CardPrice = tw.p`mt-4 text-sm font-bold text-gray-800`;
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
 	${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
@@ -150,7 +150,7 @@ export default ({
 									<CardText>
 										<CardTitle>{card.title}</CardTitle>
 										<CardContent>{card.content}</CardContent>
-										{/* <CardPrice>{card.price}</CardPrice> */}
+										<CardPrice>{card.price}</CardPrice>
 									</CardText>
 								</Card>
 							</CardContainer>
@@ -172,7 +172,7 @@ const getSnacksCard = () => {
 			title: "Bhavnagari Fafda",
 			content:
 				"Traditional Gujarati snack, crispy and served with spicy chutneys.",
-			price: "$8.99",
+			price: "Min Order: (2 lb, 1 Full Tray)",
 			rating: "4.6",
 			reviews: "12",
 			url: "#",
@@ -183,7 +183,7 @@ const getSnacksCard = () => {
 			title: "Vada Pav",
 			content:
 				"Mumbai’s iconic spicy potato fritter sandwich, served with chutneys.",
-			price: "$7.99",
+			price: "Min Order: 15 pcs",
 			rating: "4.9",
 			reviews: "89",
 			url: "#",
@@ -194,20 +194,9 @@ const getSnacksCard = () => {
 			title: "Dabeli",
 			content:
 				"A Gujarati street-food delicacy filled with spicy mashed potatoes, pomegranate, and peanuts.",
-			price: "$8.99",
+			price: "Min Order: 15 pcs",
 			rating: "4.6",
 			reviews: "12",
-			url: "#",
-		},
-		{
-			imageSrc:
-				"https://content.jdmagicbox.com/comp/ahmedabad/v8/079pxx79.xx79.140705122003.k9v8/catalogue/mri-panipuri-new-vadaj-ahmedabad-street-food-49b1126.jpg",
-			title: "Panipuri",
-			content:
-				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
-			price: "$2.99",
-			rating: "4.8",
-			reviews: "32",
 			url: "#",
 		},
 		{
@@ -216,19 +205,42 @@ const getSnacksCard = () => {
 			title: "Khasta Kachori",
 			content:
 				"Crispy golden kachori served with a tangy, flavorful chaat twist.",
-			price: "$5.99",
+			price: "Min Order: 10 pcs",
 			rating: "5.0",
 			reviews: "87",
 			url: "#",
 		},
 		{
 			imageSrc:
-				"https://www.cookwithmanali.com/wp-content/uploads/2014/11/Hakka-Noodles-1.jpg",
-			title: "Veg Hakka Noodles",
-			content: "Indo-Chinese fusion with stir-fried veggies and bold sauces.",
-			price: "$9.99",
-			rating: "4.6",
-			reviews: "13",
+				"https://assets.zeezest.com/blogs/PROD_ZZ%20SEO%20Image%20Resizing%2016%20-%202024-04-06T230808_1712425164783.jpg",
+			title: "Sev Khamani",
+			content:
+				"A fluffy, tangy, and savory Gujarati street food bursting with authentic flavors.",
+			price: "Min Order: 2 lb",
+			rating: "5.0",
+			reviews: "87",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://vegecravings.com/wp-content/uploads/2017/03/Aloo-Samosa-Recipe-Step-By-Step-Instructions.jpg",
+			title: "Samosa",
+			content:
+				"Enjoy our crispy, golden samosas filled with a perfectly spiced, flavorful potato stuffing.",
+			price: "Min Order: 20 pcs",
+			rating: "5.0",
+			reviews: "87",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://content.jdmagicbox.com/comp/ahmedabad/v8/079pxx79.xx79.140705122003.k9v8/catalogue/mri-panipuri-new-vadaj-ahmedabad-street-food-49b1126.jpg",
+			title: "Panipuri",
+			content:
+				"A burst of flavors with crunchy puris, spicy water, and tangy fillings.",
+			price: "",
+			rating: "4.8",
+			reviews: "32",
 			url: "#",
 		},
 	];
@@ -239,32 +251,52 @@ const getSnacksCard = () => {
 /* This function is only there for demo purposes. It populates placeholder cards */
 const getMainCards = () => {
 	const cards = [
+		// {
+		// 	imageSrc: "https://static.toiimg.com/photo/52446409.cms",
+		// 	title: "Paneer Sabji",
+		// 	content: "Fresh cottage cheese cooked in a traditional spiced gravy.",
+		// 	price: "Half / Full Tray Available",
+		// 	rating: "4.7",
+		// 	reviews: "18",
+		// 	url: "#",
+		// },
 		{
-			imageSrc: "https://static.toiimg.com/photo/52446409.cms",
-			title: "Paneer Sabji",
-			content: "Fresh cottage cheese cooked in a traditional spiced gravy.",
-			price: "$10.99",
-			rating: "4.7",
-			reviews: "18",
+			imageSrc:
+				"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-2_Jain-pav-bhaji-1024x538.png",
+			title: "Pav Bhaji",
+			content: "Butter-laden mashed veggie curry served with toasted buns.",
+			price: "Half / Full Tray Available",
+			rating: "4.8",
+			reviews: "26",
 			url: "#",
 		},
 		{
-			imageSrc:
-				"https://cookingfromheart.com/wp-content/uploads/2016/10/Paneer-Butter-Masala-3.jpg",
+			imageSrc: "https://static.toiimg.com/photo/52446409.cms",
 			title: "Paneer Butter Masala",
 			content: "Creamy, rich, and mildly spiced, this is a crowd-pleaser.",
-			price: "$11.99",
+			price: "Half / Full Tray Available",
 			rating: "4.8",
 			reviews: "24",
 			url: "#",
 		},
+		// {
+		// 	imageSrc:
+		// 		"https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2015/10/Jain-hobby1-copy.jpg?fm=webp&w=750&h=500&dpr=1",
+		// 	title: "Paneer Tikka (Smoky / Non-smoky)",
+		// 	content:
+		// 		"Char-grilled paneer infused with aromatic spices, available in smoky and non-smoky options.",
+		// 	price: "Half / Full Tray Available",
+		// 	rating: "4.6",
+		// 	reviews: "15",
+		// 	url: "#",
+		// },
 		{
 			imageSrc:
-				"https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2015/10/Jain-hobby1-copy.jpg?fm=webp&w=750&h=500&dpr=1",
-			title: "Paneer Tikka (Smoky / Non-smoky)",
+				"https://media.istockphoto.com/id/1292629539/photo/paneer-tikka-masala-is-a-famous-indian-dish-served-over-a-rustic-wooden-background-selective.jpg?s=612x612&w=0&k=20&c=GCvoJ3lBcvvRJmeENmSpa_7rLkh_1OKPaM6gKNYqUGM=",
+			title: "Paneer Tikka Masala",
 			content:
-				"Char-grilled paneer infused with aromatic spices, available in smoky and non-smoky options.",
-			price: "$12.49",
+				"Char-grilled paneer infused with aromatic spices in creamy rich tomato gravy.",
+			price: "Half / Full Tray Available",
 			rating: "4.6",
 			reviews: "15",
 			url: "#",
@@ -275,7 +307,7 @@ const getMainCards = () => {
 			title: "Bhungala Bateta",
 			content:
 				"A Kathiyawadi classic, featuring crispy fried potatoes and spicy sev.",
-			price: "$9.99",
+			price: "Half / Full Tray Available",
 			rating: "4.5",
 			reviews: "10",
 			url: "#",
@@ -295,7 +327,7 @@ const getMainCards = () => {
 				"https://cdn.zeptonow.com/production///tr:w-600,ar-100-100,pr-true,f-auto,q-80/web/recipes/chola-bhatura.png",
 			title: "Chhole",
 			content: "Punjabi-style chickpeas cooked in a bold and hearty masala.",
-			price: "$9.99",
+			price: "Half / Full Tray Available",
 			rating: "4.7",
 			reviews: "17",
 			url: "#",
@@ -306,19 +338,52 @@ const getMainCards = () => {
 			title: "Rajwadi Sabudana Khichdi",
 			content:
 				"A royal take on a classic fasting dish, full of flavor and tradition.",
-			price: "$10.49",
+			price: "Half / Full Tray Available",
 			rating: "4.6",
 			reviews: "11",
 			url: "#",
 		},
 		{
 			imageSrc:
-				"https://blog.swiggy.com/wp-content/uploads/2024/11/Image-2_Jain-pav-bhaji-1024x538.png",
-			title: "Pav Bhaji",
-			content: "Butter-laden mashed veggie curry served with toasted buns.",
-			price: "$9.49",
-			rating: "4.8",
-			reviews: "26",
+				"https://www.cookwithmanali.com/wp-content/uploads/2014/11/Hakka-Noodles-1.jpg",
+			title: "Veg Hakka Noodles",
+			content: "Indo-Chinese fusion with stir-fried veggies and bold sauces.",
+			price: "Half / Full Tray Available",
+			rating: "4.6",
+			reviews: "13",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://satyamskitchen.com/wp-content/uploads/2023/06/website.jpg",
+			title: "Kathiyavadi Sev-Tameta",
+			content:
+				"A rustic Gujarati delicacy of tangy tomato curry topped with crunchy sev.",
+			price: "Half / Full Tray Available",
+			rating: "4.6",
+			reviews: "13",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://www.shutterstock.com/image-photo/indian-baingan-bharta-eggplant-tomatoes-600nw-1470648323.jpg",
+			title: "Kathiyavadi Baigan Bhadathu",
+			content:
+				"A smoky, spiced eggplant curry bursting with traditional flavors.",
+			price: "Half / Full Tray Available",
+			rating: "4.6",
+			reviews: "13",
+			url: "#",
+		},
+		{
+			imageSrc:
+				"https://images.herzindagi.info/image/2024/Aug/easy-white-dhokla-recipe.jpg",
+			title: "White Dhokla / Idada",
+			content:
+				"Enjoy our White Dhokla (Idada) – soft, fluffy, and mildly tangy steamed perfection from Gujarat.",
+			price: "Half / Full Tray Available",
+			rating: "4.6",
+			reviews: "13",
 			url: "#",
 		},
 	];
@@ -386,7 +451,7 @@ const getDessertsCards = () => {
 			title: "Sukhadi",
 			content:
 				"A wholesome Gujarati sweet made with jaggery, ghee, and wheat flour.",
-			price: "$5.99",
+			price: "Min Order: 2 lb",
 			rating: "5.0",
 			reviews: "87",
 			url: "#",
@@ -397,7 +462,7 @@ const getDessertsCards = () => {
 			title: "Kaju Draksh Ice-cream",
 			content:
 				"A creamy delight ice-cream loaded with rich cashews and juicy raisins.",
-			price: "$5.99",
+			price: "",
 			rating: "5.0",
 			reviews: "87",
 			url: "#",
@@ -408,7 +473,7 @@ const getDessertsCards = () => {
 			title: "Kesar Pista Ice-cream",
 			content:
 				"An infusion of fragrant saffron and crunchy pistachios into creamy goodness of an ice-cream.",
-			price: "$5.99",
+			price: "",
 			rating: "5.0",
 			reviews: "87",
 			url: "#",
